@@ -6,3 +6,8 @@ chrome.runtime.onMessage.addListener(function(message, sender, sendResponse) {
         })
     }
 })
+chrome.runtime.onMessage.addListener(function(message, sender, sendResponse) {
+    if (message.end == "active") {
+        chrome.tabs.create({ url: "options.html" });
+    }
+})
